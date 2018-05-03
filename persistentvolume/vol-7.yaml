@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-vol7
+  labels:
+    path: nfsshare7
+    type: redis-nfs
+    app: redis
+    podindex: "6"
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.3.97
+    path: "/data02/store/share/n7"

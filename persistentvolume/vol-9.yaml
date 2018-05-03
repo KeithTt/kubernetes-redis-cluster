@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-vol9
+  labels:
+    path: nfsshare9
+    type: redis-nfs
+    app: redis
+    podindex: "8"
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.3.97
+    path: "/data02/store/share/n9"
